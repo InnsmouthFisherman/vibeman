@@ -1,0 +1,8 @@
+[package]
+name = "vibeman"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+rodio = "0.20.1"
+druid = "0.8.3"
