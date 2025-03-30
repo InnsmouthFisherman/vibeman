@@ -37,14 +37,13 @@ fn build_ui() -> impl Widget<Player> {
         }
     })
     .on_click(|_ctx, data: &mut Player, _env| {
-        data.is_playing = !data.is_playing;
-        Player::play(&data.current_track);  
+        data.toggle_playback(); 
         println!("Состояние: {}", data.is_playing);
     });
 
     let stop_button = Button::new("Стоп")
         .on_click(|_ctx, data: &mut Player, _env| {
-            data.is_playing = false;
+            data.stop();
             println!("Воспроизведение остановлено");
         })
         .padding(10.0);
